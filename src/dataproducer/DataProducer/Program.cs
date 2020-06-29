@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 
 namespace DataProducer
 {
@@ -6,11 +8,21 @@ namespace DataProducer
     {
         static void Main(string[] args)
         {
+            var dataCollectors = new List<DataCollector>();
             for(int i = 0; i < 100; i++)
             {
-                Console.WriteLine($"Currently we are at: {i}");
+                dataCollectors.Add(new DataCollector($"Collector {i}", $"Tenant {i}"));
             }
-            Console.WriteLine("Hello World!");
+            while(true){
+                foreach(DataCollector collector in dataCollectors){
+                    collector.CollectWeather();
+                    collector.CollectWeatherViews();
+                    
+                    var collectorJson = JsonConvert.SerializeObject(collector, Formatting.Indented);
+                    Console.WriteLine(collectorJson);
+                }
+            }
+
         }
     }
 }

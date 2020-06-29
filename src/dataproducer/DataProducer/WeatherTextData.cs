@@ -8,5 +8,6 @@ namespace DataProducer
     {
         public DateTime time { get; set; }
         public string message { get; set; }
+        public string userHandle {get;set;}
     }
 }

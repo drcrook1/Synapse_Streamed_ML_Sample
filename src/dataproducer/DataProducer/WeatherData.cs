@@ -9,6 +9,5 @@ namespace DataProducer
         public DateTime time { get; set; }
         public float temperature { get; set; }
         public float humidity { get; set; }
-        public float wind { get; set; }
     }
 }
