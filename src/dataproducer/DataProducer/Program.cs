@@ -22,7 +22,6 @@ namespace DataProducer
                     Console.WriteLine(collectorJson);
                 }
             }
-
         }
     }
 }
