@@ -4,6 +4,7 @@ using System.Text;
 
 namespace DataProducer
 {
+    //WeatherView
     public class WeatherTextData
     {
         public DateTime time { get; set; }
